@@ -4,14 +4,16 @@
 import socket
 import sys
 import threading
+import os
 # add parent directory so we can import from shared/protocol.py
 sys.path.append('..')  
 from shared.protocol import(
     send_message, receive_message, MESSAGE_NAMES, MESSAGE_WELCOME,
     MESSAGE_SELECT, MESSAGE_SELECT_ACK, MESSAGE_CHAT, MESSAGE_REPLY,
-    MESSAGE_EVENT, MESSAGE_QUIT, MESSAGE_ERROR
-
+    MESSAGE_EVENT, MESSAGE_QUIT, MESSAGE_ERROR,
+    MESSAGE_GIFT, MESSAGE_DONATE, MESSAGE_SUBSCRIBE, MESSAGE_LIKE
 )
+from session import ViewerSession
 
 # ================================================================================
 # @brief: A TCP server that listens for client connections.
