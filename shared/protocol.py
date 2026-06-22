@@ -26,6 +26,10 @@ MESSAGE_REPLY = 0x05
 MESSAGE_EVENT = 0x06
 MESSAGE_QUIT = 0x07
 MESSAGE_ERROR = 0x08
+MESSAGE_GIFT = 0x09
+MESSAGE_DONATE = 0x0A
+MESSAGE_SUBSCRIBE = 0x0B
+MESSAGE_LIKE = 0x0C
 
 MESSAGE_TYPE_NAMES = {
     MESSAGE_WELCOME:  "WELCOME",
@@ -36,6 +40,10 @@ MESSAGE_TYPE_NAMES = {
     MESSAGE_EVENT:  "EVENT",
     MESSAGE_QUIT:   "QUIT",
     MESSAGE_ERROR:  "ERROR",
+    MESSAGE_GIFT:   "GIFT",
+    MESSAGE_DONATE:   "DONATE",
+    MESSAGE_SUBSCRIBE:  "SUBSCRIBE",
+    MESSAGE_LIKE:   "LIKE",
 }
 
 # ====================================================================================================
@@ -95,33 +103,3 @@ def receive_message(source_socket: socket.socket) -> tuple:
 
     payload = json.loads(payload_data.decode(ENCODING))
     return message_type, payload
-
-# ====================================================================================================
-
-    # @brief: Convert a string message into bytes for sending over TCP.
-    #         TCP sockets only transmit raw bytes, not Python strings.T
-    
-    # @param:
-    #     message: The text to send (e.g., "hello" or "pick a character")
-    
-    # @return:
-    #     the message as a UTF-8 byte sequence (e.g., b"hello")
-# ====================================================================================================
-
-def encode(message: str) -> bytes:
-    return message.encode(ENCODING)
-
-# ====================================================================================================
-
-#   @brief: Convert received bytes back into a string. When recv() 
-#           returns data from the socket, it's raw bytes.
-    
-#   @param:
-#       data: Raw bytes from socket.recv() (e.g., b"hello")
-    
-#   @return:
-#       The decoded string (e.g., "hello")
-# ====================================================================================================
-
-def decode(data: bytes) -> str:
-    return data.decode(ENCODING)

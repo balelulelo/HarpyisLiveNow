@@ -10,7 +10,12 @@ import threading
 import time
 # add parent directory so we can import from shared/protocol.py
 sys.path.append('..')
-from shared.protocol import encode, decode, BUFFER_SIZE
+from shared.protocol import (
+    send_message, receive_message, MESSAGE_NAMES,
+    MESSAGE_WELCOME, MESSAGE_SELECT, MESSAGE_SELECT_ACK,
+    MESSAGE_CHAT, MESSAGE_REPLY, MESSAGE_EVENT, 
+    MESSAGE_QUIT, MESSAGE_ERROR
+)
 
 class WarkopClient:
     # ====================================================================================================
@@ -40,8 +45,8 @@ class WarkopClient:
             print(f"[CLIENT] Arrived at Warkop!")
        
             # start a thread to receive messages from the server in the background
-            recv_thread = threading.Thread(target=self.receive_loop, daemon=True)
-            recv_thread.start()
+            receive_thread = threading.Thread(target=self.receive_loop, daemon=True)
+            receive_thread.start()
 
             # start the chat loop (this blocks until the user quits)
             self.main_chat_loop()
@@ -61,14 +66,34 @@ class WarkopClient:
     def receive_loop(self):
         try:
             while True:
-                data = self.client_socket.recv(BUFFER_SIZE)
-                if not data:
+                message_type, payload = receive_message(self.client_socket)
+                # (None, None) = connection closed
+                if message_type is None:
                     print("\n[CLIENT] Server closed the connection.")
                     break
-                message = decode(data)
-                print(f"{message}", end="")
-                # reprint the prompt after the message
-                print("You: ", end="", flush=True)  
+ 
+                message_content = payload.get("message", "")
+ 
+                # 1. display welcome
+                if message_type == MESSAGE_WELCOME:
+                    print(f"{message_content}")
+                # 2. display reply and select ack
+                elif message_type in (MESSAGE_REPLY, MESSAGE_SELECT_ACK):
+                    print(f"{message_content}")
+                # 3. display event
+                elif message_type == MESSAGE_EVENT:
+                    print(f"\n[Warkop] {message_content}")
+                # 4. display error message
+                elif message_type == MESSAGE_ERROR:
+                    print(f"\n[ERROR] {message_content}")
+                # 4. other than that, it's unknown
+                else:
+                    readable_type = MESSAGE_NAMES.get(message_type, f"UNKNOWN({message_type})")
+                    print(f"\n[{readable_type}] {message_content}")
+ 
+                # reprint prompt after displaying server message
+                print("You: ", end="", flush=True)
+ 
         except ConnectionResetError:
             print("\n[CLIENT] Lost connection to server.")
         except OSError:
@@ -92,34 +117,16 @@ class WarkopClient:
                 self.send_message(message)
                 # if the user types "quit", we break the loop and disconnect
                 if message.lower() == "quit":
+                    send_message(self.client_socket, MESSAGE_TYPE_QUIT, {"message": "quit"})
                     time.sleep(0.5)
                     break
+                else:
+                    send_message(self.client_socket, MESSAGE_TYPE_CHAT, {"message": message})
+
         # exit gracefully on Ctrl+C (SIGINT)
         except KeyboardInterrupt:
             print("\n[CLIENT] Leaving from warkop...")
 
-    # ====================================================================================================
-    # @brief: Send a message to the server by encoding it to bytes and using the socket's send() method.
-    # @param:
-    #     message: The string message to send to the server.
-    # ====================================================================================================
-    def send_message(self, message: str):
-        # use sendall() to ensure the entire message is sent 
-        # (even though size is not an issue for short chat messages)
-        self.client_socket.sendall(encode(message))
-
-    # ====================================================================================================
-    # @brief: Receive a message from the server by using the socket's recv() method and decoding 
-    #         the bytes to a string.
-    # @return: The received message as a string, or None if the connection is closed.
-    # ====================================================================================================
-    def receive_message(self) -> str | None:
-        data = self.client_socket.recv(BUFFER_SIZE)
-        # if recv() returns empty bytes, the connection is closed
-        if not data:
-            return None
-        return decode(data)
-    
     # ====================================================================================================
     # @brief: Close the client socket to disconnect from the server.
     # ====================================================================================================
@@ -130,3 +137,30 @@ class WarkopClient:
     # Note:
     # close() sends a FIN packet to the server, signaling that we're done.The server's recv() will then 
     # return b"", which it detects as a disconnect.
+
+
+    
+# NOT NEEDED
+
+    # # ====================================================================================================
+    # # @brief: Send a message to the server by encoding it to bytes and using the socket's send() method.
+    # # @param:
+    # #     message: The string message to send to the server.
+    # # ====================================================================================================
+    # def send_message(self, message: str):
+    #     # use sendall() to ensure the entire message is sent 
+    #     # (even though size is not an issue for short chat messages)
+    #     self.client_socket.sendall(encode(message))
+
+    # # ====================================================================================================
+    # # @brief: Receive a message from the server by using the socket's recv() method and decoding 
+    # #         the bytes to a string.
+    # # @return: The received message as a string, or None if the connection is closed.
+    # # ====================================================================================================
+    # def receive_message(self) -> str | None:
+    #     data = self.client_socket.recv(BUFFER_SIZE)
+    #     # if recv() returns empty bytes, the connection is closed
+    #     if not data:
+    #         return None
+    #     return decode(data)
+    
