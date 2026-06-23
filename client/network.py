@@ -12,12 +12,13 @@ import time
 sys.path.append('..')
 from shared.protocol import (
     send_message, receive_message, MESSAGE_NAMES,
-    MESSAGE_WELCOME, MESSAGE_SELECT, MESSAGE_SELECT_ACK,
-    MESSAGE_CHAT, MESSAGE_REPLY, MESSAGE_EVENT, 
-    MESSAGE_QUIT, MESSAGE_ERROR
+    MESSAGE_WELCOME, MESSAGE_USERNAME, MESSAGE_USERNAME_ACK,
+    MESSAGE_CHAT, MESSAGE_REPLY, MESSAGE_EVENT,
+    MESSAGE_QUIT, MESSAGE_ERROR,
+    MESSAGE_GIFT, MESSAGE_DONATE, MESSAGE_SUBSCRIBE, MESSAGE_LIKE
 )
 
-class WarkopClient:
+class HarpyStreamClient:
     # ====================================================================================================
         # @brief: Initialize the client with a host and port. The default is localhost:3012.
         # @attr host: The IP address or hostname of the server to connect to (default 'localhost')
@@ -28,6 +29,7 @@ class WarkopClient:
         self.host = host
         self.port = port
         self.client_socket = None
+        self.username = None
 
     # ====================================================================================================
         # @brief: Connect to the server by creating a socket and connecting to the specified host and port.
@@ -40,28 +42,68 @@ class WarkopClient:
                 # 2. Server → Client:  SYN-ACK    (Acknowledged, I'm ready too)
                 # 3. Client → Server:  ACK        (Great, let's go)
             self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            print(f"[CLIENT] Visiting Warkop at {self.host}:{self.port}...")
+            print(f"[CLIENT] Connecting to the stream at {self.host}:{self.port}...")
             self.client_socket.connect((self.host, self.port))
-            print(f"[CLIENT] Arrived at Warkop!")
+            print(f"[CLIENT] Successfully Joined!")
        
-            # start a thread to receive messages from the server in the background
+            # Wait for welcome message (asks for username)
+            message_type, payload = receive_message(self.client_socket)
+            if message_type == MESSAGE_WELCOME:
+                stream_title = payload.get("stream_title", "")
+                if stream_title:
+                    print(f"  {stream_title}\n")
+                print(payload.get("message", ""))
+ 
+            # grab viewer's (client) username
+            self.username = input("\nEnter your username: ").strip()
+            if not self.username:
+                self.username = "anonymous"
+
+            send_message(self.client_socket, MESSAGE_USERNAME, {
+                "username": self.username
+            })
+ 
+            # wait for harpy's reply
+            message_type, payload = receive_message(self.client_socket)
+            if message_type == MESSAGE_USERNAME_ACK:
+                sender = payload.get("sender", "Harpy")
+                print(f"\n  {sender}: {payload.get('message', '')}\n")
+
+            self.print_help()
+
             receive_thread = threading.Thread(target=self.receive_loop, daemon=True)
             receive_thread.start()
 
-            # start the chat loop (this blocks until the user quits)
             self.main_chat_loop()
     
         # case where the server isn't running, connect() raises ConnectionRefusedError
         except ConnectionRefusedError:
-            print(f"[CLIENT] Could not connect. Is the Warkop server running?")
+            print(f"[CLIENT] Could not connect. Is the stream running?")
         except Exception as e:
-            print(f"[CLIENT] Error connecting to server: {e}")
+            print(f"[CLIENT] Error connecting to stream: {e}")
         finally:
             self.disconnect()
 
+    
     # ====================================================================================================
-        # @brief: Continuously receive messages from the server in a background thread.
-        #         Handles ALL incoming data: welcome message, chat responses, broadcast events.
+    # @brief: print available commands for the viewer.
+    # ====================================================================================================
+    def print_help(self):
+        print("=" * 50)
+        print("  Commands:")
+        print("  /gift <amount>        — Send a gift")
+        print("  /donate <amount> <msg> — Donate with a message")
+        print("  /subscribe            — Subscribe to the stream")
+        print("  /like                 — Like the stream")
+        print("  /help                 — Show help")
+        print("  /quit                 — Leave the stream")
+        print("  (anything else)       — Send a chat message")
+        print("=" * 50)
+        print()
+
+    # ====================================================================================================
+    # @brief: Continuously receive messages from the server in a background thread.
+    #         Handles ALL incoming data: welcome message, chat responses, broadcast events.
     # ====================================================================================================
     def receive_loop(self):
         try:
@@ -69,40 +111,39 @@ class WarkopClient:
                 message_type, payload = receive_message(self.client_socket)
                 # (None, None) = connection closed
                 if message_type is None:
-                    print("\n[CLIENT] Server closed the connection.")
+                    print("\n[CLIENT] Harpy ended the stream.")
                     break
  
+                sender = payload.get("sender", "")
                 message_content = payload.get("message", "")
+                mood = payload.get("mood", "")
  
-                # 1. display welcome
-                if message_type == MESSAGE_WELCOME:
-                    print(f"{message_content}")
-                # 2. display reply and select ack
-                elif message_type in (MESSAGE_REPLY, MESSAGE_SELECT_ACK):
-                    print(f"{message_content}")
-                # 3. display event
+                if message_type == MESSAGE_REPLY:
+                    mood_display = f" [{mood}]" if mood else ""
+                    print(f"\n  {sender}{mood_display}: {message_content}")
+
                 elif message_type == MESSAGE_EVENT:
-                    print(f"\n[Warkop] {message_content}")
-                # 4. display error message
-                elif message_type == MESSAGE_ERROR:
-                    print(f"\n[ERROR] {message_content}")
-                # 4. other than that, it's unknown
-                else:
-                    readable_type = MESSAGE_NAMES.get(message_type, f"UNKNOWN({message_type})")
-                    print(f"\n[{readable_type}] {message_content}")
+                    print(f"\n  {message_content}")
  
-                # reprint prompt after displaying server message
-                print("You: ", end="", flush=True)
+                elif message_type == MESSAGE_ERROR:
+                    print(f"\n  {message_content}")
+ 
+                else:
+                    readable_type = MESSAGE_NAMES.get(message_type, "UNKNOWN")
+                    print(f"\n  [{readable_type}] {message_content}")
+ 
+                # reprint prompt
+                print(f"  {self.username}: ", end="", flush=True)
  
         except ConnectionResetError:
-            print("\n[CLIENT] Lost connection to server.")
+            print("\n[CLIENT] Lost connection to the stream.")
         except OSError:
             # socket closed by disconnect(), expected on quit
             pass
 
     # ====================================================================================================
-        # @brief: the main interaction loop with the server. It will send a message to the server and wait for 
-        # a response
+    #   @brief: the main interaction loop with the server. It will send a message to the server and wait for 
+    #           a response
 
     # ====================================================================================================
     def main_chat_loop(self):
@@ -113,19 +154,52 @@ class WarkopClient:
                 # skip empty messages
                 if not message:
                     continue
+                # parse incoming command
+                if message.startswith("/"):
+                    message_parts = message.split(maxsplit=2)
+                    command = message_parts[0].lower()
+                    # after parsed, check which category does the command falls to
+                    if command == "/quit":
+                        send_message(self.client_socket, MESSAGE_QUIT, {
+                            "message": "quit"
+                        }) 
+                        time.sleep(0.5)
+                        break
 
-                self.send_message(message)
-                # if the user types "quit", we break the loop and disconnect
-                if message.lower() == "quit":
-                    send_message(self.client_socket, MESSAGE_TYPE_QUIT, {"message": "quit"})
-                    time.sleep(0.5)
-                    break
+                    elif command == "/gift":
+                        gift_amount = int(message_parts[1]) if len(message_parts) > 1 and message_parts[1].isdigit() else 1000
+                        send_message(self.client_socket, MESSAGE_GIFT, {
+                            "amount": gift_amount
+                        })
+
+                    elif command == "/donate":
+                        donate_amount = int(message_parts[1]) if len(message_parts) > 1 and message_parts[1].isdigit() else 5000
+                        donate_message = message_parts[2] if len(message_parts) > 2 else "Keep up the great stream :D!"
+                        send_message(self.client_socket, MESSAGE_DONATE, {
+                            "amount": donate_amount,
+                            "message": donate_message
+                        })
+                    
+                    elif command == "/subscribe":
+                        send_message(self.client_socket, MESSAGE_SUBSCRIBE, {})
+                    
+                    elif command == "/like":
+                        send_message(self.client_socket, MESSAGE_LIKE, {})
+
+                    elif command == "/help":
+                        self.print_help()
+
+                    else:
+                        print(f" Uh oh, command unknown: {command}. Type /help for commands!")
+                # just a regular message. send it anyways
                 else:
-                    send_message(self.client_socket, MESSAGE_TYPE_CHAT, {"message": message})
+                    send_message(self.client_socket, MESSAGE_CHAT, {
+                        "message": message
+                    })
 
         # exit gracefully on Ctrl+C (SIGINT)
         except KeyboardInterrupt:
-            print("\n[CLIENT] Leaving from warkop...")
+            print("\n[CLIENT] Leaving the stream...")
 
     # ====================================================================================================
     # @brief: Close the client socket to disconnect from the server.
@@ -133,7 +207,7 @@ class WarkopClient:
     def disconnect(self):
         if self.client_socket:
             self.client_socket.close()
-            print("[CLIENT] Disconnected from Warkop. See you next time!\n")
+            print("[CLIENT] Leaving the Stream. Thanks for joining ^w^ \n")
     # Note:
     # close() sends a FIN packet to the server, signaling that we're done.The server's recv() will then 
     # return b"", which it detects as a disconnect.

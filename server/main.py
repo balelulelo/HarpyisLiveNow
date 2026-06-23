@@ -5,14 +5,14 @@
 # and listen for incoming requests.
 # ====================================================================================================
 
-from server import WarkopServer
+from server import HarpyStreamServer
 
 # ====================================================================================================
     # @brief: The main function that initializes and starts the WarkopServer.
 # ====================================================================================================
 def main():
-    warkop_server = WarkopServer(host='localhost', port=3012)
-    warkop_server.start_server()
+    harpy_server = HarpyStreamServer(host='localhost', port=3012)
+    harpy_server.start_server()
 
 if __name__ == "__main__":
     main()

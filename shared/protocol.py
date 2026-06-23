@@ -58,7 +58,7 @@ MESSAGE_TYPE_NAMES = {
 def send_message(target_socket: socket.socket, message_type: int, payload: dict):
     payload_bytes = json.dumps(payload).encode(ENCODING)
     header = struct.pack(HEADER_FORMAT, len(payload_bytes), message_type)
-    sock.sendall(header + payload_bytes) 
+    target_socket.sendall(header + payload_bytes) 
 
 # ====================================================================================================
 # @brief: Receive exactly `num_bytes` bytes from a socket.
@@ -99,7 +99,7 @@ def receive_message(source_socket: socket.socket) -> tuple:
 
     payload_data = receive_exact(source_socket, payload_length)
     if payload_data is None:
-        retrun None, None
+        return None, None
 
     payload = json.loads(payload_data.decode(ENCODING))
     return message_type, payload

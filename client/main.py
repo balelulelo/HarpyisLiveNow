@@ -7,16 +7,16 @@
 #      fail to connect.
 # ====================================================================================================
 
-from network import WarkopClient
+from network import HarpyStreamClient
 
 # ====================================================================================================
-    # @brief: The main function that initializes the WarkopClient, connects to the server, 
+    # @brief: The main function that initializes the HarpyStreamClient, connects to the server, 
     #        and starts the chat loop.
 # ====================================================================================================
 def main():
     # make sure the host and port match the server's host and port
-    warkop_client = WarkopClient(host='localhost', port=3012)
-    warkop_client.connect_to_server()
+    client = HarpyStreamClient(host='localhost', port=3012)
+    client.connect_to_server()
 
 if __name__ == "__main__":
     main()
