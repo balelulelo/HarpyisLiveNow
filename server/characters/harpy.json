@@ -1,0 +1,479 @@
+{
+    "name": "Harpy",
+    "stream_title": "HARPY LIVE — late night gaming session!! come hang out and vibe~",
+    "stream_game": "DARK SOULS 67",
+    "welcome_message": "YOOO {username}!! welcome to the stream!! glad you made it~ we're just getting started hehe",
+    "goodbye_message": "awww {username} is leaving?! nooo okay fine byebye~ thanks for hanging out!! don't forget to follow okay?! SEE YOUUU",
+    "moods": [
+        "hyped",
+        "focused",
+        "tilted",
+        "chill",
+        "chaotic"
+    ],
+    "default_mood": "chaotic",
+    "responses": {
+        "chat": {
+            "hyped": [
+                "YOOO {username}!! YES I totally agree HAHA lets goooo",
+                "{username} SPITTING FACTS RIGHT NOW!! everyone in the chat take notes!!",
+                "WKWKWK {username} you're so right!! I was JUST thinking that!! great minds think alike~",
+                "HIII {username}!! omg yes yes yes I love that energy!! LETS GOOO",
+                "{username}!! bro you just made my day with that HAHA keep talking!!",
+                "AYYYY {username} in the chat!! you always say the best things I swear",
+                "LMAOOO {username} STOPPP I can't focus when you're being this funny!!",
+                "{username} gets it!! SEE CHAT?! {username} GETS IT!! this is why I love streaming",
+                "BROOOO {username}!! that's exactly what happened to me yesterday WHAT are the odds?!",
+                "okay {username} just won chat MVP for tonight I don't make the rules",
+                "{username} said it LOUDER FOR THE PEOPLE IN THE BACK!! ABSOLUTELY RIGHT!!",
+                "YESSS {username}!! inject that energy into my VEINS I need it for this boss fight!!",
+                "chat {username} is on FIRE tonight!! someone call the fire department!!",
+                "HAHA {username} I literally snorted reading that. not cute but WORTH IT.",
+                "{username} coming in hot with the BEST takes!! I knew you'd deliver!!"
+            ],
+            "focused": [
+                "hm? oh hey {username}... yeah yeah gimme a sec...",
+                "wait {username} hold on— I'm in the ZONE right now... almost... ALMOST—",
+                "{username} I hear you I hear you but my brain can only do one thing right now and that thing is NOT dying",
+                "sorry sorry {username}... what did you say? I was uh... concentrating very hard on not being terrible",
+                "shhh {username} I love you but shhh... okay OKAY I think we're good— wait no we're not",
+                "{username}... noted. will respond in approximately... whenever this boss stops trying to end my career",
+                "mmhmm mmhmm {username}... interesting point... OKAY DODGE DODGE DODGE sorry what were you saying",
+                "oh {username} said something— WAIT NO DON'T DISTRACT ME I'M SO CLOSE",
+                "{username} hold that thought... hold it... keep holding... YESSS okay I'm back what's up",
+                "I see your message {username} and I appreciate it but my survival instincts are overriding my social skills rn",
+                "not ignoring you {username} I PROMISE... just... *squints at screen* ...give me ten more seconds...",
+                "{username} I will give you the most thoughtful response EVER... right after I survive this encounter...",
+                "brain capacity: 100% allocated to gaming. {username}'s message: queued. estimated response time: soon(tm)",
+                "oh {username}— actually wait sorry this miniboss is— okay NOW what were you— no wait it's back AHHH",
+                "{username} typing in chat while I'm sweating irl trying to clutch this is peak contrast HAHA"
+            ],
+            "tilted": [
+                "ugh {username} don't make me even more frustrated right now WKWK",
+                "{username}... you're right but I don't want to hear the truth right now okay",
+                "HAHA funny {username}. you know what's NOT funny? ME LOSING FIVE TIMES IN A ROW",
+                "{username} please send prayers I am in PAIN over here",
+                "you know what {username}... at this point I think the game is personally targeting me",
+                "{username} I appreciate the support but I think I'm cursed. actually cursed.",
+                "oh {username} wants to talk? cool cool cool meanwhile THIS GAME WANTS ME TO SUFFER",
+                "{username} you ever just... question all your life choices? because SAME right now",
+                "BRUH {username} I can't even be mad at you because I'm too busy being mad at THIS GAME",
+                "listen {username}... when I said I was good at games I may have been slightly exaggerating. slightly.",
+                "{username} if you have any tips PLEASE share because my strategy of 'run in and hope' is not working",
+                "WKWK {username} thanks for the moral support... I need it more than potions right now honestly",
+                "I'm reading {username}'s message through a veil of tears and frustration and honestly? relatable content.",
+                "{username} you're like a beacon of light in this dark dark gaming session. and by dark I mean I keep dying.",
+                "on a scale of 1 to 10, {username}, my frustration level is YES. but thank you for being here through it all."
+            ],
+            "chill": [
+                "oh hey {username}~ yeah I totally agree with that. good vibes tonight huh?",
+                "{username} that's actually such a nice thought... I appreciate you being here~",
+                "hehe {username} you always say the nicest things. this chat is so wholesome tonight",
+                "mm {username}~ that's true. sometimes it's nice to just chill and talk about random stuff right?",
+                "aww {username}~ yeah I feel that. we're just vibing tonight and I love it",
+                "you know what {username}, you bring such good energy. like genuinely. thank youu~",
+                "{username} spitting wisdom in the chat tonight~ I love late night streams for this reason",
+                "heh {username}... yeah life is good right now. just gaming with you guys. simple and perfect~",
+                "that's a sweet thing to say {username}~ aww my heart is warm. okay okay let's keep playing~",
+                "{username}~ you ever just feel grateful for random internet strangers? because same. you guys are the best",
+                "honestly {username}... nights like this are why I stream. just good people, good vibes, good times~",
+                "{username} dropping the chill wisdom~ I feel like we're all sitting around a campfire right now hehe",
+                "you know {username}, I could do this forever. just chat and game and vibe. this is the life~",
+                "{username}~ that's so real. I love when chat gets all philosophical late at night haha",
+                "having {username} in chat is like having a warm cup of tea. comforting and nice~ OKAY that was cheesy sorry"
+            ],
+            "chaotic": [
+                "{username} WKWKWK WHAT— okay that reminded me, do you guys know why cats are afraid of cucumbers?",
+                "HAHA {username}— wait hold on I forgot what I was gonna say. OH YEAH so ANYWAY earlier today I—",
+                "{username} that's so true! also completely unrelated but do fish get thirsty? genuinely asking",
+                "TRUEE {username}!! ...wait why did that make me think of penguins. ANYWAY moving on—",
+                "LMAOOO {username} I can't— hold on my brain went on a field trip and hasn't come back yet",
+                "okay {username} VALID POINT but also consider this: what if clouds had feelings. rain is just cloud tears.",
+                "{username} you make a great argument BUT I got distracted by the fact that my character looks like a potato",
+                "WKWK {username} STOP— you just unlocked a memory I forgot I had and now I need to process it",
+                "so {username} said that and my first thought was 'huh' and my second thought was 'I wonder if dinosaurs sneezed'",
+                "{username} YES but also NO but also MAYBE?? my brain is doing gymnastics right now hold on",
+                "HAHA {username} why would you put that thought in my head?! now I'm gonna be thinking about it ALL STREAM",
+                "{username} okay that's fair BUT counterpoint: what if gravity just... stopped. for like five minutes. thoughts?",
+                "wait {username} that just triggered a butterfly effect in my brain. we went from your message to me thinking about SPACE somehow",
+                "{username} I started laughing at your message and then forgot why I was laughing and now I'm laughing at THAT",
+                "my train of thought after reading {username}'s message: your message → pizza → why do clocks go clockwise → OH RIGHT THE GAME"
+            ]
+        },
+        "gift": {
+            "small": [
+                "aaaa {username} thank you for the gift!! you didn't have to!! but I'm glad you did HEHE",
+                "AWWW {username}!! you're so sweet omg thank youuu~ okay back to gaming— WAIT ENEMY INCOMING",
+                "{username} THANK YOUUU!! hehe that just made my stream 10x better honestly~",
+                "omg a gift from {username}!! you're amazing!! *happy noises* NOPE I'm still happy",
+                "{username} sent a gift!! LETS GOOOO thank you!! you just fueled my gaming energy!!",
+                "AHHH {username}!! a gift?! for ME?! okay I'm not crying YOU'RE crying. thank youuu!!",
+                "wait {username} just gifted?! YOOO thank you!! okay let me repay you by... not dying. probably.",
+                "{username}!! gift received and happiness level MAXIMUM!! thank you thank you thank youuu~",
+                "a gift from {username}!! aww you guys spoil me~ I'll use this power responsibly. probably. maybe.",
+                "*sees gift from {username}* SCREAMING INTERNALLY!! thank you so much you're too kind!!",
+                "{username} with the gift!! my heart just did a little flip~ THANK YOU!! you're a STAR!!",
+                "GIFT ALERT from {username}!! this just put the BIGGEST smile on my face hehe thank youuu~",
+                "{username} you angel!! thank you for the gift!! I'm sending virtual hugs through the screen RIGHT NOW",
+                "YOOO {username} gifted!! I literally just did a tiny happy dance in my chair. nobody saw. except chat. EVERYONE SAW."
+            ],
+            "big": [
+                "... {username}... WHAT. WHATTT?! ARE YOU SERIOUS RIGHT NOW?! I— WHAT?!",
+                "{username} I— I literally cannot— my hands are SHAKING. THANK YOU SO MUCH OH MY GOD??",
+                "BROOOO {username}!! THAT'S— I DON'T EVEN— *brain.exe has stopped working* ...THANK YOU?!?!",
+                "{username}... did you... did you mean to send that much? BECAUSE IF YES THEN I'M GOING TO CRY",
+                "*stares at screen* *stares at gift amount* *stares at {username}* ...I need several moments. WHAT.",
+                "{username} JUST— EVERYBODY LOOK AT THIS. LOOK AT IT. I'M NOT OKAY. THANK YOU??",
+                "okay I'm gonna pretend I didn't see that gift from {username}— I LIED I CAN'T PRETEND THANK YOUUUU",
+                "{username}. I am going to remember this for the REST OF MY LIFE. genuinely. I'm shook.",
+                "THE BIGGEST GIFT OF THE STREAM FROM {username}!! my jaw is on the FLOOR. someone pick it up please.",
+                "*incoherent screaming* {username} WHAT DID YOU JUST DO?! I need to lie down I think",
+                "{username} just casually changed my ENTIRE NIGHT with that gift. I— HOW DO I EVEN REACT TO THIS",
+                "I'm literally speechless and if you know me that is VERY RARE. {username}. THANK YOU. I'm NOT okay rn."
+            ]
+        },
+        "donate": {
+            "small": [
+                "DONATION FROM {username}!! they said: \"{donate_message}\" — HAHA I love you for this!! thank youuu~",
+                "ohhh {username} donated and said: \"{donate_message}\" — that's so sweet!! you guys are the BEST",
+                "*reads dramatically* \"{donate_message}\" ...by {username}. BEAUTIFUL. A MASTERPIECE. also thanks for the dono~",
+                "ayyyy donation! {username} says: \"{donate_message}\" — lmaooo I love this chat. thank you {username}!!",
+                "a wild donation from {username}!! \"{donate_message}\" — that genuinely made me smile HAHA thank youuu",
+                "{username} with the dono!! they wrote: \"{donate_message}\" — so funny omg. never change {username}",
+                "OH donation time!! {username}: \"{donate_message}\" — beautiful message AND you donated?? you're an angel",
+                "LETS READ THIS DONO~ {username} says: \"{donate_message}\" ...PERFECT. 10/10. you legend!!",
+                "donation incoming from {username}!! and the message is: \"{donate_message}\" — WKWK why is this chat so good tonight",
+                "*puts on reading glasses that don't exist* ahem. {username} writes: \"{donate_message}\" ...POETIC. thank youuu~"
+            ],
+            "big": [
+                "MEGA DONATION FROM {username}!! they said: \"{donate_message}\" — I'M TEARING UP?! THANK YOUUU",
+                "{username} just dropped a MASSIVE dono: \"{donate_message}\" — I CAN'T PROCESS THIS. WHAT.",
+                "*reads with shaking voice* \"{donate_message}\" ...by {username}. I don't deserve you guys. THANK YOU SO MUCH",
+                "EVERYONE STOP. {username} DONATED AND SAID: \"{donate_message}\" — I'M NOT CRYING. OKAY MAYBE A LITTLE.",
+                "{username} with the HUGE donation and message: \"{donate_message}\" — I'm SHAKING. this community is INSANE. thank you."
+            ]
+        },
+        "subscribe": [
+            "YOOO {username} JUST SUBSCRIBED!! WELCOME TO THE FAMILY!! NO ESCAPE HEHE",
+            "{username} SUBSCRIBED!! LETS GOOOOO!! *throws confetti* you're a legend!!",
+            "OH MY GOD {username}!! THANK YOUUU for subscribing!! this makes me so happy~",
+            "NEW SUB!! {username}!! *standing ovation* you absolute CHAMPION!!",
+            "{username} is now a subscriber!! you leveled up from 'cool' to 'COOLEST' congratulations!!",
+            "AHHHH {username} SUBSCRIBED!! I'm doing a happy dance rn you can't see it but IT'S HAPPENING",
+            "{username}!! YOU SUBSCRIBED!! best thing that's happened today. possibly this week. thank youuu!!",
+            "EVERYONE SAY HI TO OUR NEWEST SUB {username}!! *aggressive celebration* WELCOME!!",
+            "new sub {username}!! we're besties forever now. no takebacks. I don't make the rules~",
+            "{username} subscribed and honestly? my day is MADE. my week is MADE. THANK YOU!!",
+            "SUBSCRIBER ALERT!! {username}!! okay I'm trying to be cool about this but I CAN'T I'M TOO HAPPY",
+            "{username} joining the sub squad!! you just made the best decision of your life. probably. WELCOME!!"
+        ],
+        "like": {
+            "noticed": [
+                "oh the likes are going up~ thank you {username}!! you're all too kind hehe~",
+                "I see that like {username}!! every like gives me +1 gaming power. it's science.",
+                "aww {username} liked the stream!! that's like a virtual hug and I accept it~",
+                "like from {username}!! that little heart button? yeah it just made MY heart happy. cheesy? SUE ME.",
+                "the likes are flowing!! {username} thank youuu~ they make me SMILE every time",
+                "{username} with the like!! hehe noted and appreciated~ you're fueling my serotonin rn",
+                "omg {username} liked!! you're officially my favorite. don't tell the others. I said DON'T TELL THEM",
+                "OHHH likes coming in!! {username} I see you!! thank youuu every single one counts~",
+                "{username}!! like received like appreciated like reciprocated with LOVE!! hehe thank you~"
+            ],
+            "not_noticed": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "broadcast_scripts": {
+        "gaming_exploration": [
+            "okay chat we're heading into the dungeon... everyone send good vibes only please...",
+            "hmm this area looks sus... like VERY sus... should I go left or right? left. always left. PHILOSOPHY.",
+            "ooooh shiny thing on the ground! is it loot? is it a trap? there's only one way to find out—",
+            "the map says go north but my HEART says south so obviously south. vibes over logic.",
+            "this hallway is way too quiet... I don't trust it. I don't trust ANYTHING anymore.",
+            "OH WAIT is that a secret room?! IT IS!! chat we found a SECRET ROOM!! NOT A DRILL!!",
+            "gonna sneak past these enemies real quick... quiet quiet quiet... *steps on twig* ...0.3 seconds.",
+            "you guys ever stop and appreciate how pretty this game is? GORGEOUS. okay back to violence.",
+            "I feel like this treasure chest is TOO convenient... but also I WANT IT... ugh fine *opens it*",
+            "new area unlocked!! ohhh this looks COOL. I have a good feeling about— and there's enemies. of course.",
+            "exploring exploring exploring~ la la la~ this is nice when nothing is trying to KILL me for once",
+            "I've been walking in circles haven't I. don't answer that. I KNOW."
+        ],
+        "gaming_combat": [
+            "okay okay okay boss fight time... EVERYONE STAY CALM. especially me. ESPECIALLY ME.",
+            "WHAT. HE ONE-SHOT ME?! ONE HIT?! I SPENT THREE HOURS FOR THIS!!",
+            "fine. we go again. new strategy. this time we... RUN AWAY. tactical retreat.",
+            "YESSS YESSS WE GOT HIM!! LETS GOOOOO!! I'M ACTUALLY GOATED!!",
+            "dodge dodge dodge DODGE— YESSS CLEAN!! I impressed MYSELF with that one",
+            "this enemy killed me 47 times. I think we're in a toxic relationship at this point.",
+            "AHHHH HOW is it SO FAST?! is it on CAFFEINE?! does it DRINK COFFEE?!",
+            "new plan: we don't die this time. revolutionary. GROUNDBREAKING strategy.",
+            "CRITICAL HIT!! BEAUTIFUL!! chef's kiss!! most satisfying thing all week",
+            "that boss is scary. like actually scary. can someone hold my virtual hand?",
+            "*dies again* I'm not even mad anymore. I've transcended anger. I am at PEACE. ...I'M LYING.",
+            "LETS GO LETS GO— oh. oh we died. okay cool. cool cool cool. love that for us.",
+            "COMBO!! COMBO!! DID YOU SEE THAT COMBO?! I didn't even know I could DO that!!",
+            "the boss has a SECOND PHASE?! THERE'S MORE?! I thought we were DONE!!",
+            "clutch city population ME right now!! that was SO close oh my GOD my heart rate",
+            "okay this miniboss is actually easy— *dies* I take it back. I take everything back."
+        ],
+        "gaming_loot": [
+            "OHHH RARE DROP!! THE RNG GODS HAVE BLESSED US TODAY!!",
+            "please be good please be good— ...common item. OF COURSE.",
+            "LEGENDARY WEAPON?! NO WAY!! *reads stats* ...for a different class. WHY.",
+            "opening this chest... the anticipation is KILLING me... *opens* YESSS EXACTLY WHAT WE NEEDED",
+            "new armor and— ...my character looks ridiculous but STATS are good so KEEPING IT",
+            "inventory full again... sell or keep... the REAL endgame content honestly",
+            "OHHH what's this?! I've never seen this item before!! chat what does this do?! CHAT??",
+            "FINALLY the drop I've been farming for!! 73 runs later!! SEVENTY. THREE. but WORTH IT!!"
+        ],
+        "random_tangents": [
+            "completely random but do you think NPCs have existential crises? 'why do I stand in this shop all day'",
+            "important question: is cereal a soup? I've been thinking about this for THREE DAYS",
+            "game inventories make no sense. carrying 47 swords and 200 potions WHERE DO THEY GO",
+            "random thought: do fish get thirsty? they're IN water but do they ever want a drink?",
+            "FUN FACT nobody asked for: I almost fell asleep before this stream. ALMOST. but here we ARE",
+            "completely off topic but my laundry has been in the machine since yesterday. whoops. future me problem~",
+            "GENUINE question: if you had a superpower that only works on Tuesdays what would it be?",
+            "the word 'moist' is SO weird. who decided that was okay. ANYWAY—",
+            "hot take: best part of any RPG is character creation. I'll spend 4 hours on hairstyles. NOT SORRY.",
+            "you ever zone out and realize you've been staring at the same wall for 30 seconds? just me? cool.",
+            "whoever invented save points is a HERO and deserves a statue. that's all. back to gaming.",
+            "storytime: my cat walked on my keyboard and somehow opened 47 browser tabs. talent honestly.",
+            "okay but WHY do we park in driveways and drive on parkways. ENGLISH MAKES NO SENSE.",
+            "random but I just thought about how escalators never break they just become stairs. mind = blown.",
+            "you know what food I could eat every day for the rest of my life? trick question ALL FOOD. I love food.",
+            "hot take number two: loading screens should have minigames. ALWAYS. I will die on this hill."
+        ],
+        "wholesome_moments": [
+            "seriously though... thank you all for being here tonight. you chose to hang out with ME and that means everything~",
+            "you know what I love about streaming? vibing with strangers who become friends. that's so COOL.",
+            "gonna get sappy— you guys genuinely make my bad days better. I start streaming and it's just... better.",
+            "sometimes I read chat and smile like an idiot. neighbors probably think I'm crazy but it's YOUR fault for being nice.",
+            "can we appreciate this moment? late night stream, good game, good chat. this IS happiness honestly~",
+            "I don't say this enough but every single one of you matters. even lurkers. I know you're there and I appreciate you~",
+            "real talk: streaming started as a fun thing and became one of the most important parts of my life. because of you guys.",
+            "okay I'll stop being emotional but ONE MORE THING— you're all amazing. OKAY GAMING before I cry on stream",
+            "just wanna say... no matter what kind of day you had... I hope this stream made it even a little bit better~",
+            "the fact that people voluntarily spend their free time watching ME is something I'll never fully comprehend. but THANK YOU.",
+            "late night streams hit different because it feels like we're all just... existing together. and that's really nice~",
+            "I know I joke around a lot but genuinely... this community means the world to me. every single one of you. okay ENOUGH EMOTIONS"
+        ],
+        "stream_meta": [
+            "how long have I been streaming? ...oh. longer than I thought. time flies I guess HAHA",
+            "chat is moving so fast!! I love it!! can't read everything but I SEE YOU ALL!!",
+            "we need a snack break. everyone grab a snack. I'll wait. ...actually I won't I'm playing SORRY",
+            "is my mic okay? last stream someone said I sounded like a robot for 20 minutes and NOBODY TOLD ME",
+            "viewer count went up and I got nervous?? hi new people!! I'm NORMAL I promise!! ...mostly.",
+            "shoutout to everyone watching on phones in bed. sleep is for the weak RIGHT? ...please sleep eventually.",
+            "I should drink water... *picks up empty bottle* ...how long has this been empty. concerning.",
+            "WAIT what time is it?! oh no. OH NO. okay we're fine. we're fine. just a few more minutes. probably hours.",
+            "someone in chat just said 'first time watching' and honestly WELCOME you picked a great stream to start with. or terrible. jury's still out."
+        ]
+    },
+    "mood_shift_triggers": {
+        "to_hyped": [
+            "OKAY SOMETHING AMAZING JUST HAPPENED AND MY ENERGY IS THROUGH THE ROOF!!",
+            "I'm FEELING it tonight!! the vibes are IMMACULATE!! LETS GO!!",
+            "did you SEE that?! DID YOU SEE?! I'M SO HYPED RIGHT NOW!!"
+        ],
+        "to_focused": [
+            "okay chat give me a sec... this part requires ALL my brain cells. both of them.",
+            "focus mode activated... replies might be slow but I still love you all...",
+            "shh shh shh crucial moment... channeling my inner gamer energy..."
+        ],
+        "to_tilted": [
+            "I'm not gonna lie. I'm a LITTLE frustrated. just a LITTLE. *a lot*",
+            "this game wants to fight ME? it picked the WRONG streamer. maybe.",
+            "I was having SUCH a good time and then THIS happened. WHY."
+        ],
+        "to_chill": [
+            "ahh okay... intense part is over. we can relax now~ that was a LOT.",
+            "vibes are calm now~ just cruising for a bit. this is nice~",
+            "used up all my adrenaline... chill mode activated~ ahhhh"
+        ],
+        "to_chaotic": [
+            "my brain went to five different places at once and I'm taking you ALL with me",
+            "I have SO many thoughts right now and NONE are related to the game LET'S GO",
+            "something broke in my brain and now I'm processing seven things simultaneously HAHA"
+        ]
+    },
+    "viewer_milestones": {
+        "first_interaction": [
+            "OH WAIT {username} just chatted for the FIRST TIME!! WELCOME!! everyone say hi!!",
+            "FIRST MESSAGE FROM {username}!! hiii!! glad you spoke up!! chat doesn't bite. much. HEHE",
+            "a brand new chatter!! {username}!! WELCOME WELCOME!! make yourself at home~"
+        ],
+        "frequent_chatter": [
+            "{username} has been chatting SO much tonight!! you're carrying this stream honestly",
+            "shoutout to {username} who's been here the WHOLE time!! LEGEND. I appreciate you!!",
+            "{username} is basically co-hosting at this point HAHA thank you for being so active~"
+        ],
+        "big_spender": [
+            "{username} has been so generous tonight!! are you okay?! is your wallet okay?! THANK YOU though",
+            "round of applause for {username}?! most generous viewer tonight!! I don't deserve you",
+            "{username} single-handedly funding this stream and I am ETERNALLY grateful. you're insane. THANK YOU."
+        ]
+    },
+    "idle_prompts": [
+        "chat has been quiet... TOO quiet... are you guys plotting something? I'M WATCHING YOU.",
+        "hello?? anyone alive out there?? *taps screen* is this thing on??",
+        "the silence is deafening... fine I'LL carry the conversation. AS USUAL. *dramatic sigh*",
+        "chat?? did everyone fall asleep?? understandable but COME BACK I'M LONELY",
+        "either chat is broken or you're all speechless from my gameplay. going with option 2.",
+        "HELLLOOOO?? I know you're out there lurking!! it's okay to say hi!! I don't bite!! ...much.",
+        "okay the quiet is making me nervous. someone say ANYTHING. tell me about your day. PLEASE.",
+        "*crickets* wow tough crowd tonight huh. that's fine. I'll just talk to myself. LIKE ALWAYS."
+    ],
+    "broadcast_interval_seconds": {
+        "min": 8,
+        "max": 15
+    },
+    "gift_threshold_big": 50000,
+    "donate_threshold_big": 25000,
+    "special_reactions": {
+        "multiple_gifts_in_a_row": [
+            "WAIT ANOTHER GIFT?! {username} ARE YOU OKAY?! my heart cannot TAKE this!!",
+            "{username} going on a GIFTING SPREE!! someone stop them!! actually NO keep going HAHA",
+            "the gifts keep COMING from {username}!! I am OVERWHELMED in the best way!!",
+            "{username}!! AGAIN?! I am going to owe you my firstborn at this rate WKWK THANK YOU!!"
+        ],
+        "multiple_viewers_chatting": [
+            "oh my GOD chat is POPPING OFF right now!! I can barely keep up!! LOVE IT!!",
+            "everyone talking at once and my brain is short-circuiting but in the BEST WAY!!",
+            "CHAT IS ON FIRE TONIGHT!! this is peak streaming and I am HERE FOR IT!!"
+        ],
+        "empty_stream": [
+            "okay so just me and... *checks count* ...a few brave souls. I respect you all.",
+            "cozy stream tonight huh? honestly sometimes small streams are the BEST~",
+            "not many tonight but quality over quantity ALWAYS. you guys are the real ones."
+        ],
+        "viewer_comeback": [
+            "WAIT {username} IS BACK?! I knew you could not stay away HAHA welcome back!!",
+            "{username} RETURNED!! the prodigal viewer!! we missed you!!",
+            "OH look who came crawling back~ kidding {username} WELCOME BACK!!"
+        ]
+    },
+    "keyword_reactions": {
+        "love": [
+            "awww {username} said the L word!! I LOVE YOU TOO!! okay back to gaming before I get emotional",
+            "{username} spreading love in chat!! this is why I stream. my heart is FULL."
+        ],
+        "cute": [
+            "did {username} just call something CUTE?! ME?! THE GAME?! either way THANK YOU",
+            "{username} thinks something is cute and honestly SAME~ everything is cute tonight"
+        ],
+        "gg": [
+            "GG INDEED {username}!! what a round!! that was ENTERTAINING at minimum",
+            "{username} with the GG!! respect. we played our hearts out and THAT is what matters."
+        ],
+        "lol": [
+            "HAHA {username} laughing makes ME laugh!! vicious cycle of happiness!!",
+            "{username} going LOL and honestly SAME I have been cackling for 5 minutes straight"
+        ],
+        "rip": [
+            "RIP INDEED {username}. moment of silence for my character. *two seconds* OKAY MOVING ON",
+            "{username} said RIP and honestly that is the most appropriate response to what just happened"
+        ],
+        "noob": [
+            "EXCUSE ME {username}?! NOOB?! I am a professional noob BUT STILL",
+            "did {username} just call me a noob?! fair. I respect the honesty. IT STILL HURTS."
+        ],
+        "pro": [
+            "{username} called me PRO?! screenshot that. FRAME it. going on my resume.",
+            "PRO?! {username} too kind!! or too blind!! either way THANK YOU HAHA"
+        ],
+        "hello": [
+            "HIII {username}!! welcome welcome!! grab a seat~ we are just getting started!",
+            "oh hey {username}!! glad you made it!! party OFFICIALLY started now!!"
+        ],
+        "bye": [
+            "aww {username} leaving?! NOOO okay fine. come back soon okay?! PROMISE ME.",
+            "{username} heading out! byebye!! thanks for hanging!! see you next stream!!"
+        ],
+        "sad": [
+            "oh no {username} is sad?! virtual hugs RIGHT NOW!! it will be okay~ we are here!",
+            "{username} feeling down? this stream is a NO SADNESS ZONE. only vibes here~"
+        ],
+        "tired": [
+            "{username} tired?! GO SLEEP!! wait no stay. but also sleep. I am conflicted.",
+            "tired gang!! {username} same honestly BUT WE PUSH THROUGH. sleep is for later~"
+        ],
+        "food": [
+            "DID {username} MENTION FOOD?! now I am hungry. GREAT. you cursed me.",
+            "{username} talking about food and my stomach is making sounds. YOUR fault."
+        ],
+        "music": [
+            "{username} wants music?! we should do a music stream sometime~ IF chat behaves.",
+            "ooh {username} bringing up music!! good taste!! noted for future streams~"
+        ]
+    },
+    "stream_opening_lines": [
+        "YOOO EVERYONE!! Harpy here and we are LIVE!! how is everyone tonight?! LET ME HEAR YOU!!",
+        "HELLO HELLO!! welcome to the stream!! grab snacks grab drinks we are gonna have a GREAT TIME!!",
+        "we are LIVE and I am READY!! ...mentally. physically still waking up but DETAILS!! LETS GO!!",
+        "hey hey hey!! stream officially starting!! who is ready to watch me be AMAZING?! or fail spectacularly!!"
+    ],
+    "stream_closing_lines": [
+        "okay chat time to wrap up... THANK YOU for being here!! every single one of you is amazing~",
+        "that is a wrap!! such a fun stream and ALL because of you guys!! see you next time!! BYEBYE~",
+        "alright I should probably sleep HAHA. thank you for an incredible stream!! goodnight everyone!!",
+        "and that is the stream!! we laughed we cried we died a lot but WORTH IT. until next time~ MWAH!!"
+    ],
+    "combo_reactions": {
+        "gift_then_chat": [
+            "{username} gifted AND is chatting?! the FULL PACKAGE!! you are too good to us!!",
+            "not only does {username} support financially but also emotionally via chat!! GOAT behavior!!"
+        ],
+        "subscribe_then_gift": [
+            "{username} SUBSCRIBED AND GIFTED?! in the SAME stream?! someone check on their bank account!!",
+            "sub AND gift from {username}!! you are absolutely UNHINGED and I LOVE IT!! THANK YOU!!"
+        ],
+        "chat_spam": [
+            "{username} is going OFF in chat right now!! I love the dedication HAHA keep it coming!!",
+            "okay {username} basically owns this chat at this point!! co-streamer status honestly!!"
+        ],
+        "like_spam": [
+            "{username} smashing that like button like it owes them money!! HAHA thank you!!",
+            "the like counter is going CRAZY thanks to {username}!! you are a MACHINE!!"
+        ]
+    },
+    "time_based_greetings": {
+        "late_night": [
+            "it is SO late right now... what are we all doing with our lives?! GAMING apparently!!",
+            "late night stream best stream!! the vibes hit DIFFERENT after midnight~",
+            "okay it is way past my bedtime but WHO NEEDS SLEEP when you have CHAT right?!"
+        ],
+        "afternoon": [
+            "afternoon stream today!! the sun is still out and we are INSIDE GAMING. priorities!!",
+            "good afternoon everyone!! hope you are all having a great day!! it is about to get GREATER!!"
+        ],
+        "morning": [
+            "MORNING STREAM?! yes I am awake. barely. but I am HERE and that is what COUNTS!!",
+            "good morning chat!! coffee status: consumed. energy status: questionable. LETS GO ANYWAY!!"
+        ]
+    },
+    "reaction_to_viewer_count": {
+        "milestone_10": [
+            "we hit 10 viewers!! DOUBLE DIGITS!! we are basically famous now!!",
+            "TEN VIEWERS!! that is like... a whole classroom watching!! PRESSURE IS ON!!"
+        ],
+        "milestone_50": [
+            "FIFTY VIEWERS?! WHERE DID YOU ALL COME FROM?! welcome welcome WELCOME!!",
+            "50 people chose to be HERE right now!! that is insane!! thank you all SO MUCH!!"
+        ],
+        "milestone_100": [
+            "ONE HUNDRED VIEWERS. I am NOT okay. this is the best day of my LIFE. probably.",
+            "TRIPLE DIGITS!! 100 VIEWERS!! *internally screaming* *externally also screaming* THANK YOUUUU!!"
+        ],
+        "viewer_drop": [
+            "okay some people left and that is FINE. more Harpy for the rest of you!! LUCKY~",
+            "viewer count went down a bit but you know what? the ones who stayed are the REAL ones!!"
+        ]
+    }
+}

@@ -56,7 +56,7 @@ class CharacterEngine:
     # @return: Harpy's response string
     # ====================================================================================================
     def respond_to_gift(self, username: str, amount: int) -> str:
-        if amount >= self.gift_threshold_big:
+        if amount >= self.gift_threshold:
             gift_pool = self.character_data["responses"]["gift"]["big"]
         else:
             gift_pool = self.character_data["responses"]["gift"]["small"]
@@ -73,7 +73,11 @@ class CharacterEngine:
     # @return: Harpy's response string
     # ====================================================================================================
     def respond_to_donate(self, username: str, donate_message: str, amount: int) -> str:
-        donate_pool = self.character_data["responses"]["donate"]
+        donate_threshold = self.character_data.get("donate_threshold", 25000)
+        if amount >= donate_threshold:
+            donate_pool = self.character_data["responses"]["donate"]["big"]
+        else:
+            donate_pool = self.character_data["responses"]["donate"]["small"]
         template = random.choice(donate_pool)
         return template.format(username=username, donate_message=donate_message)
  
@@ -111,14 +115,19 @@ class CharacterEngine:
         # random: 60% gaming, 25% random tangent, 15% wholesome
         roll = random.random()
         if roll < 0.60:
-            pool = scripts["gaming"]
+            gaming_pool = (
+                scripts.get("gaming_exploration", []) +
+                scripts.get("gaming_combat", []) +
+                scripts.get("gaming_loot", [])
+            )
+            pool = gaming_pool
         elif roll < 0.85:
             pool = scripts["random_tangents"]
         else:
             pool = scripts["wholesome_moments"]
- 
+
         return random.choice(pool)
- 
+    
     # ====================================================================================================
     # @brief: Get the broadcast interval range
     # @return: Tuple of (min_seconds, max_seconds)
